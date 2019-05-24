@@ -23,5 +23,7 @@ services:
 networks:
   skynet:    
     driver: bridge
-    config:
-      - subnet: "172.19.0.0/24"
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.19.0.0/24"
