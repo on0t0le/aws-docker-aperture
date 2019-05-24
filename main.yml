@@ -21,8 +21,7 @@ services:
       - "80:80"
     restart: always
 networks:
-  skynet:
-    ipam:
-      driver: bridge
-      config:
-        - subnet: "172.19.0.0/24"
+  skynet:    
+    driver: bridge
+    config:
+      - subnet: "172.19.0.0/24"
