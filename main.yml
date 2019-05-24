@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  web1:
+    container_name: web1
+    build: "web/"
+    networks:
+      - skynet
+    restart: always
+  web2:
+    container_name: web2
+    build: "web/"
+    networks:
+      - skynet
+    restart: always
+  proxy:
+    container_name: proxy
+    build: "proxy/"
+    networks:
+      - skynet
+    ports:
+      - "80:80"
+    restart: always
+networks:
+  skynet:
+    ipam:
+      driver: bridge
+      config:
+        - subnet: "172.19.0.0/24"
